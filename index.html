@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Seedance Omni Reference App</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <h1>Private Seedance 2.5 Omni Reference App</h1>
+      <p>Upload images, videos, and audio references. Draft prompts. Optionally let GPT-6 clean up the prompt before sending it to your configured provider.</p>
+      <div class="note">This starter app is private by default. It only becomes fully live when you add your own provider credentials.</div>
+    </header>
+
+    <main class="grid">
+      <section class="panel">
+        <h2>Create a generation</h2>
+        <form id="gen-form">
+          <label>
+            Prompt
+            <textarea name="prompt" rows="7" placeholder="Describe the video you want. Mention how the references should be used."></textarea>
+          </label>
+
+          <div class="row two">
+            <label>
+              Duration (4 to 30 sec)
+              <input type="number" name="duration" min="4" max="30" value="30" />
+            </label>
+            <label>
+              Resolution
+              <select name="resolution">
+                <option value="480p">480p</option>
+                <option value="720p" selected>720p</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="row two">
+            <label>
+              Aspect ratio
+              <select name="aspect_ratio">
+                <option value="16:9" selected>16:9</option>
+                <option value="9:16">9:16</option>
+                <option value="1:1">1:1</option>
+                <option value="4:3">4:3</option>
+              </select>
+            </label>
+            <label>
+              References
+              <input type="file" name="references" id="references" multiple accept="image/*,video/*,audio/*" />
+            </label>
+          </div>
+
+          <div class="checks">
+            <label><input type="checkbox" name="audio_enabled" /> Generate audio if provider supports it</label>
+            <label><input type="checkbox" name="omni_reference_enabled" checked /> Use omni reference mode</label>
+            <label><input type="checkbox" name="optimize_prompt" checked /> Optimize prompt through GPT-6 first</label>
+          </div>
+
+          <button type="submit">Generate</button>
+        </form>
+
+        <div id="result" class="result hidden"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <h2>Recent jobs</h2>
+          <button id="refresh-btn" class="secondary">Refresh</button>
+        </div>
+        <div id="jobs" class="jobs"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

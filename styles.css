@@ -1,0 +1,145 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f1115;
+  color: #f5f7fa;
+}
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.hero {
+  margin-bottom: 24px;
+}
+.hero h1 {
+  margin: 0 0 10px;
+}
+.hero p {
+  margin: 0 0 12px;
+  color: #c8d0db;
+}
+.note {
+  background: #151922;
+  border: 1px solid #2a3140;
+  color: #dbe7ff;
+  padding: 12px 14px;
+  border-radius: 10px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+}
+.panel {
+  background: #151922;
+  border: 1px solid #2a3140;
+  border-radius: 14px;
+  padding: 18px;
+}
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+label {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+textarea, input, select, button {
+  width: 100%;
+  margin-top: 6px;
+  background: #0f1115;
+  color: #f5f7fa;
+  border: 1px solid #39445a;
+  border-radius: 10px;
+  padding: 12px;
+}
+textarea { resize: vertical; }
+.row.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.checks {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.checks label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0;
+}
+.checks input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+button {
+  cursor: pointer;
+  font-weight: 700;
+}
+button.secondary {
+  width: auto;
+  padding: 10px 14px;
+}
+.result, .job-card {
+  background: #101520;
+  border: 1px solid #2a3140;
+  border-radius: 12px;
+  padding: 14px;
+  margin-top: 16px;
+}
+.job-card { margin-top: 0; }
+.jobs {
+  display: grid;
+  gap: 12px;
+}
+.job-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+  color: #bcc6d6;
+}
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #0a0d12;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #263043;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #1b2332;
+  border: 1px solid #2f3d59;
+  font-size: 12px;
+}
+.muted {
+  color: #a6afbe;
+}
+.hidden {
+  display: none;
+}
+.preview video {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #2f3d59;
+}
+@media (max-width: 900px) {
+  .grid, .row.two {
+    grid-template-columns: 1fr;
+  }
+}
